@@ -13,5 +13,13 @@ export default Ember.Route.extend({
       return posts.filterBy('titleURL', titleURL).get('firstObject')
     })
 
+  },
+
+  afterModel(model) {
+    // if the model returns empty because the titleURL doesn't match anything
+    if (Ember.isEmpty(model)) {
+      this.transitionTo('posts');
+    }
   }
+
 });

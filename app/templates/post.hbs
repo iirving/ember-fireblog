@@ -1,7 +1,26 @@
 <h1>Post : {{model.title}}</h1>
 
-           <h4>{{model.body}}</h4>
+{{#if isEditing}}
 
+  <div class='col-md-4 border'>
+    <form {{action 'save' on='submit'}}>
+      <dl>
+        <dt>Body:<br> {{textarea value=model.body cols='40' rows='6'}}</dt>
+      </dl>
+      <div class = 'row'>
+        <button type='submit' class ='btn btn-primary'>Done</button>
+        <button {{action "cancel"}}>Cancel</button>
+      </div>
+    </form>
+  </div>
 
-<div>{{#link-to 'posts'}}back to all Posts{{/link-to}}</div>
-{{outlet}}
+{{else}}
+
+  <form {{action 'edit' }}>
+    <button type='submit' class='btn btn-primary'>Edit</button>
+    <button type='delete' class= 'btn btn-primary' {{action 'delete'}}>Delete</button>
+  </form>
+  <h4>{{model.body}}</h4>
+  <div>{{#link-to 'posts'}}back to all Posts{{/link-to}}</div>
+
+{{/if}}
