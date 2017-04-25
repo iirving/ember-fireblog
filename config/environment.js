@@ -1,6 +1,6 @@
 /* eslint-env node */
 
-module.exports = function(environment) {
+module.exports = function (environment) {
   var ENV = {
     modulePrefix: 'ember-blog',
     environment: environment,
@@ -15,6 +15,19 @@ module.exports = function(environment) {
         // Prevent Ember Data from overriding Date.parse.
         Date: false
       }
+    },
+
+    firebase: {
+      apiKey: process.env.FIREBASE_APIKEY,
+      authDomain: 'YOUR-FIREBASE-APP.firebaseapp.com',
+      databaseURL: process.env.FIREBASE_DATABASEURL,
+      storageBucket: process.env.FIREBASE_STORAGEBUCKET
+    },
+
+    contentSecurityPolicy: {
+      'script-src': "'self' 'unsafe-eval' apis.google.com",
+      'frame-src': "'self' https://*.firebaseapp.com",
+      'connect-src': "'self' wss://*.firebaseio.com https://*.googleapis.com"
     },
 
     APP: {
@@ -43,7 +56,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    // for production only
   }
 
   return ENV;

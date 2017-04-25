@@ -1,0 +1,41 @@
+<h1>Posts</h1>
+{{#link-to 'new' post.new}}Add New Post{{/link-to}}
+<br><br>
+<section>
+{{#each model as |post|}}
+
+  <div>
+
+    {{#if isEditing}}
+         <div class='col-md-4 border'>
+           <form {{action 'save' on='submit'}}>
+             <dl>
+               <dt>Title:<br> {{textarea value=model.title
+                 cols='40' rows='1'}}</dt>
+               <dt>Body:<br> {{textarea value=model.body
+                 cols='40' rows='6'}}</dt>
+             </dl>
+         <div class = 'row'>
+           <button type='submit' class =
+             'btn btn-primary'>Done</button>
+         </div>
+           </form>
+         </div>
+    {{/if}}
+
+
+
+   <h1>{{post.titleURL}}</h1>
+   <h3>{{post.title}}</h3>
+   <h4>{{post.body}}</h4>
+    <form {{action 'edit' }}>
+      <button type='submit' class='btn btn-primary'>Edit</button>
+      <button type='delete' class= 'btn btn-primary'
+      {{action 'delete'}}>Delete</button>
+    </form>
+  </div>
+{{/each}}
+</section>
+
+
+{{outlet}}

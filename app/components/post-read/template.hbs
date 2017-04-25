@@ -1,0 +1,10 @@
+   <h1>{{post.titleURL}}</h1>
+   <h3>{{post.title}}</h3>
+   <h4>{{post.body}}</h4>
+   {{#if isEditable}}
+    <form {{action 'edit' }}>
+      <button type='submit' class='btn btn-primary'>Edit</button>
+      <button type='delete' class= 'btn btn-primary'
+      {{action 'delete'}}>Delete</button>
+    </form>
+  {{/if}}
