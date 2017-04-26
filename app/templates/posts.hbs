@@ -1,12 +1,13 @@
+<p>posts.hbs</p>
 <h1>Posts</h1>
-{{#link-to 'posts.new'}}Add New Post{{/link-to}}
-<br><br>
+  {{#link-to 'posts.new'}}<button class ='btn btn-primary'>Add New Post</button>{{/link-to}}
+  <br><br>
+
 <section>
-{{#each model as |post|}}
+  {{#each model as |post|}}
 
-  <div>{{#link-to 'post' post.titleURL}}  {{post.title}} {{/link-to}}  </div>
-{{/each}}
+    <div>{{#link-to 'posts.post' post.titleURL}}  {{post.title}} {{/link-to}}  </div>
+  {{/each}}
 </section>
-
 
 {{outlet}}
