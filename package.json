@@ -1,9 +1,9 @@
 {
   "name": "ember-blog",
-  "version": "0.0.0",
-  "description": "Small description for ember-blog goes here",
+  "version": "0.1.0",
+  "description": "a small ember app for testing and learning",
   "license": "MIT",
-  "author": "",
+  "author": "Ian Irving FalsePositives ConnectedThinking",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -27,6 +27,7 @@
     "ember-cli-htmlbars-inline-precompile": "^0.3.6",
     "ember-cli-inject-live-reload": "^1.4.1",
     "ember-cli-qunit": "^3.1.0",
+    "ember-cli-release": "^1.0.0-beta.2",
     "ember-cli-shims": "^1.0.2",
     "ember-cli-sri": "^2.1.0",
     "ember-cli-uglify": "^1.2.0",
@@ -40,7 +41,7 @@
     "loader.js": "^4.2.3"
   },
   "engines": {
-    "node": ">= 4"
+    "node": "6.9.1"
   },
   "private": true
 }
