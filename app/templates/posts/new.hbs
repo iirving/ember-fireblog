@@ -1,14 +1,19 @@
+<p>post.new</p>
 <br><br>
        <div class='col-md-4 border' >
            <h1>New Post</h1>
            <form {{action 'save' on="submit"}}>
              <dl>
-               <dt>Title:<br> {{textarea value=title cols="40"                 rows="1" placeholder='Title'}}</dt>
+               <dt>Title:<br> {{textarea value=title cols="40" rows="1" placeholder='Title'}}</dt>
                <dt>Body:<br> {{textarea value=body cols="40"
                  rows="6" placeholder='Body'}}</dt>
              </dl>
-             <button type='submit' class='btn btn-
-               primary'>Add</button>
+             <button type='submit' class='btn btn-primary'>Add</button>
+
+            {{#link-to 'posts'}}
+              <button type='submit' class='btn btn-primary'>Cancel</button>
+            {{/link-to}}
+
            </form>
        </div>
        <div class='col-md-4 border'  >
