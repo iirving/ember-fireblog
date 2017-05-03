@@ -1,4 +1,15 @@
 
+0.2.0 / 2017-05-03
+==================
+
+  * a post summary component with truncated body and tests
+  * make titleURL a computed model property and test it
+  * working mirage acceptance test
+  * update emberfire package
+  * install mirage
+  * working on tests
+  * refine model to check local store first
+
   v0.1.0 / 2017-04-27
 ===================
 
