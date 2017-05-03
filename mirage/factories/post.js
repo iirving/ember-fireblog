@@ -5,6 +5,5 @@ import {
 
 export default Factory.extend({
   title: faker.lorem.words,
-  body: faker.lorem.paragraph,
-  titleURL: 'title-one'
+  body: faker.lorem.paragraph
 });
