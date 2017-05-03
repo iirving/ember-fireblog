@@ -4,8 +4,7 @@
 
 <section>
   {{#each model as |post|}}
-
-    <div>{{#link-to 'posts.post' post.titleURL}}  {{post.title}} {{/link-to}}  </div>
+    {{post-read-summary-link post=post}}
   {{/each}}
 </section>
 
