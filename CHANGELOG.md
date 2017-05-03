@@ -1,5 +1,5 @@
 
-0.1.2 / 2017-05-03
+v0.1.2 / 2017-05-03
 ==================
 
   * a post summary component with truncated body and tests
