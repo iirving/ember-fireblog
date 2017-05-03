@@ -5,6 +5,9 @@
   <div class='col-md-4 border'>
     <form {{action 'save' on='submit'}}>
       <dl>
+        <dt>Title:<br> {{textarea value=model.title cols='40' rows='1'}}</dt>
+      </dl>
+      <dl>
         <dt>Body:<br> {{textarea value=model.body cols='40' rows='6'}}</dt>
       </dl>
       <div class = 'row'>
