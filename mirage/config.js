@@ -16,13 +16,13 @@ export default function () {
     Shorthand cheatsheet:
 */
   this.get('/posts');
-  /*   this.post('/posts');
-     this.get('/posts/:id');
-     this.put('/posts/:id'); // or this.patch
-     this.del('/posts/:id');
+  /*   this.post('/posts'); */
+  this.get('/posts/:titleURL');
+  /*     this.put('/posts/:id'); // or this.patch
+       this.del('/posts/:id');
 
-     http://www.ember-cli-mirage.com/docs/v0.3.x/shorthands/
-   */
+       http://www.ember-cli-mirage.com/docs/v0.3.x/shorthands/
+     */
 
   // this.get('/posts', (schema, request) => {
   //   return schema.posts.all();

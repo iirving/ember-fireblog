@@ -1,20 +1,21 @@
-<h1>{{displayTitle}}</h1>
+<h1 class='post-edit-display-title'>{{displayTitle}}</h1>
 
 {{#if isEditing}}
-  <div class='col-md-4 border'>
+  <div class='post-edit'>
     <form {{action 'save' on='submit'}}>
-      <dl>
-        <dt>Title:<br> {{textarea value=model.title cols='40' rows='1'}}</dt>
-        <dt>Body:<br> {{textarea value=model.body cols='40' rows='6'}}</dt>
-      </dl>
+      <section>
+      <div>{{model.id}}</div>
+        <div class="title">Title:<br> {{textarea value=model.title cols='40' rows='1'}}</div>
+        <div class="body">Body:<br> {{textarea value=model.body cols='40' rows='6'}}</div>
+      </section>
       <div class = 'row'>
         {{#if (eq mode 'edit')}}
-          <button type='submit' class ='btn btn-primary'>Update</button>
+          <button id='btn-update' type='submit' class ='btn btn-primary'>Update</button>
         {{else}}
-          <button type='submit' class='btn btn-primary'>Add</button>
+          <button id='btn-add' type='submit' class='btn btn-primary'>Add</button>
         {{/if}}
 
-        <button {{action "cancel"}}>Cancel</button>
+        <button id='btn-cancel' {{action "cancel"}}>Cancel</button>
       </div>
     </form>
   </div>
@@ -22,14 +23,14 @@
 
 
 {{else}}
-
-  <form {{action 'edit' }}>
-    <button type='submit' class='btn btn-primary'>Edit</button>
-    <button type='delete' class= 'btn btn-primary' {{action 'delete'}}>Delete</button>
-  </form>
-  <h4>{{model.body}}</h4>
-  <div>{{#link-to 'posts'}}back to all Posts{{/link-to}}</div>
-
+  <div class="post-edit-display">
+    <form {{action 'edit' }}>
+      <button id='btn-edit' type='submit' class='btn btn-primary'>Edit</button>
+      <button id='btn-delete' type='delete' class= 'btn btn-primary' {{action 'delete'}}>Delete</button>
+    </form>
+    <h4 class="post-edit-display-body">{{model.body}}</h4>
+    <div>{{#link-to 'posts'}}back to all Posts{{/link-to}}</div>
+  </div>
 {{/if}}
 
 

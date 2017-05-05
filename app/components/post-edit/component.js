@@ -13,13 +13,15 @@ export default Ember.Component.extend({
     } else {
       this.set('isEditing', false);
     }
+    this.set('displayTitle', this.displayTitle)
 
   },
 
   displayTitle: Ember.computed('mode', 'title', 'model',
     function () {
       if (this.get('mode') === 'edit') {
-        return `Post : ${this.get('model').get('title')}`
+        const title = this.get('model').get('title')
+        return `Post : ${title}`
       } else {
         return 'New Post'
       }
@@ -27,8 +29,14 @@ export default Ember.Component.extend({
     }),
 
   actions: {
+
     cancel() {
+      let model = this.get('model')
       if (this.get('mode') === 'edit') {
+        let store = this.get('store')
+        store.findRecord('post', model.get('id')).then((post) => {
+          post.rollbackAttributes()
+        })
         this.set('isEditing', false)
       } else {
         this.get('routing').transitionTo('posts')
@@ -44,6 +52,7 @@ export default Ember.Component.extend({
       let model = this.get('model');
       model.destroyRecord().then(function () {
         that.get('routing').transitionTo('posts')
+        that.set('isEditing', false);
       })
     },
 
